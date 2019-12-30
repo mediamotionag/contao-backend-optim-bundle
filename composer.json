@@ -1,7 +1,7 @@
 {
   "name": "mediamotionag/contao-backend-optim-bundle",
   "homepage": "https://github.com/mediamotionag/contao-backend-optim-bundle",
-  "description":"JWPlayer Video-Player",
+  "description":"Backend Optimizing Bundle",
   "keywords":["contao", "contao4", "contao-bundle", "backend", "id", "ids", "module", "page", "article"],
   "type": "contao-bundle",
   "license": "LGPL-3.0+",
