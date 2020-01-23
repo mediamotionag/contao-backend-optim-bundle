@@ -12,15 +12,19 @@
 /**
  * Allow HTML in Headlines (to add linebreakts)
  */
+ 
 $GLOBALS['TL_DCA']['tl_content']['fields']['headline']['eval']['allowHtml'] = true;
 $GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml']  = true;
 
 /**
  * Backend CSS for sticky save etc.
  */
-if(TL_MODE == 'BE') 
-{ 
-	if (BE_USER_LOGGED_IN)
+ 
+if(TL_MODE == 'BE')
+{
+	$objUser = BackendUser::getInstance();
+	
+	if ($objUser->isAdmin)
 	{
 		$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=' . time();
 	}
