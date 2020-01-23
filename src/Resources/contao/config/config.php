@@ -20,5 +20,8 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml']  = tr
  */
 if(TL_MODE == 'BE') 
 { 
-	$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=' . time();
+	if (BE_USER_LOGGED_IN)
+	{
+		$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=' . time();
+	}
 }
