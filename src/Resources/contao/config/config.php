@@ -24,7 +24,7 @@ if(TL_MODE == 'BE')
 {
 	$objUser = BackendUser::getInstance();
 	
-	if ($objUser->isAdmin)
+	if ($objUser)
 	{
 		$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=' . time();
 	}
