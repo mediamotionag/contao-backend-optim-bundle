@@ -19,12 +19,14 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml']  = tr
 /**
  * Backend CSS for sticky save etc.
  */
- 
+
+
 if(TL_MODE == 'BE')
 {
-	$objUser = BackendUser::getInstance();
 	
-	if ($objUser)
+	$objUser = BackendUser::getInstance();
+
+	if ($objUser->username != NULL)
 	{
 		$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=' . time();
 	}
