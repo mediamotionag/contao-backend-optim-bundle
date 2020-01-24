@@ -5,11 +5,13 @@
  * @author Media Motion AG
  **/
 
+/* Add background from Contao 4.4 */
 body {
     background: #132330 -webkit-radial-gradient(#234058,#0f1c26) !important;
     background: #132330 radial-gradient(#234058,#0f1c26) !important;
 }
 
+/* Make Submit-Form Sticky */
 .tl_formbody_submit {
     position: -webkit-sticky;
     position: sticky;
@@ -17,7 +19,8 @@ body {
     z-index: 9;
 }
 
-#left ul.tl_level_1 {
+/* Make Navi left sticky */
+#left ul.tl_level_0 {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -25,11 +28,20 @@ body {
     overflow: auto;
 }
 
-#left ul.tl_level_1::-webkit-scrollbar{
+/* Make Navi left sticky */
+#left ul.tl_level_0::-webkit-scrollbar{
     display: none;
 }
 
 #left .version {
     margin-top: 0;
     box-shadow: 0px -4px 3px rgba(0, 0, 0, 0.75);
+}
+
+/* Add Icons for known bundles */
+#tl_navigation a.group-leads {
+    background: url(/bundles/memobackendoptim/icons/inbox.svg) 3px 2px no-repeat;
+}
+#tl_navigation a.group-notification_center {
+    background: url(/bundles/memobackendoptim/icons/bell.svg) 3px 2px no-repeat;
 }
