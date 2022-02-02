@@ -10,7 +10,7 @@
  */
  
 $objUser = \BackendUser::getInstance();
-if (isset($objUser) && $objUser->isAdmin) {
+if (isset($objUser) && $objUser->admin == true) {
 	
 	# Show Page-ID
 	$GLOBALS['TL_DCA']['tl_page']['list']['label']['fields'][] = 'id';
