@@ -10,7 +10,7 @@
  */
  
 $objUser = \BackendUser::getInstance();
-if (isset($objUser) && $objUser->isAdmin) {
+if (BE_USER_LOGGED_IN && $objUser->isAdmin) {
 	
 	# Only for article-listing
 	if(strpos($_SERVER['REQUEST_URI'],'table=') === false) {
