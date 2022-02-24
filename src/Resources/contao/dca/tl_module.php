@@ -11,7 +11,7 @@
  
  # Show Module-ID
  $objUser = \BackendUser::getInstance();
-if (isset($objUser) && $objUser->isAdmin) {
+if (BE_USER_LOGGED_IN && $objUser->isAdmin) {
 	$GLOBALS['TL_DCA']['tl_module']['list']['sorting']['child_record_callback'] = array('tl_module_ids', 'listModule');
 }
 
