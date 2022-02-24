@@ -5,12 +5,6 @@
  * @author Media Motion AG
  **/
 
-/* Add background from Contao 4.4 */
-body#top:not(.popup) {
-    background: #132330 -webkit-radial-gradient(#234058,#0f1c26) !important;
-    background: #132330 radial-gradient(#234058,#0f1c26) !important;
-}
-
 /* Make Submit-Form Sticky */
 .tl_formbody_submit {
     position: -webkit-sticky;
