@@ -39,9 +39,3 @@
 #tl_navigation a.group-notification_center {
     background: url(/bundles/memobackendoptim/icons/bell.svg) 3px 2px no-repeat;
 }
-
-/* Add background from Contao 4.4 */
-body#top:not(.popup) {
-    background: #132330 -webkit-radial-gradient(#234058,#0f1c26) !important;
-    background: #132330 radial-gradient(#234058,#0f1c26) !important;
-}
