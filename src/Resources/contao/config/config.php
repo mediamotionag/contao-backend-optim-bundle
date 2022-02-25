@@ -28,6 +28,6 @@ if(TL_MODE == 'BE')
 
 	if ($objUser->username != NULL)
 	{
-		$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=1';
+		$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=2';
 	}
 }
