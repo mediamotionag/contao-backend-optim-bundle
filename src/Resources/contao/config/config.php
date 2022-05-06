@@ -23,11 +23,5 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml']  = tr
 
 if(TL_MODE == 'BE')
 {
-	
-	$objUser = BackendUser::getInstance();
-
-	if ($objUser->username != NULL)
-	{
-		$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=2';
-	}
+	$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=2';
 }
