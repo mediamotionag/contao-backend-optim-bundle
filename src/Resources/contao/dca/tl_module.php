@@ -13,9 +13,11 @@ use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Contao\System;
 use Symfony\Component\Security\Core\Security;
 
-$security = System::getContainer()->get('security.helper');
-if ($security->isGranted('ROLE_ADMIN')) {
-    $GLOBALS['TL_DCA']['tl_module']['list']['sorting']['child_record_callback'] = array('tl_module_ids', 'listModule');
+if (System::getContainer()->get('contao.security.token_checker')->hasBackendUser()) {
+    $security = System::getContainer()->get('security.helper');
+    if ($security->isGranted('ROLE_ADMIN')) {
+        $GLOBALS['TL_DCA']['tl_module']['list']['sorting']['child_record_callback'] = array('tl_module_ids', 'listModule');
+    }
 }
 
 /**
