@@ -8,12 +8,22 @@
  * @package   BackendOptimBundle
  * @author    Rory Zünd, Media Motion AG
  */
- 
-$objUser = \BackendUser::getInstance();
-if (BE_USER_LOGGED_IN && $objUser->isAdmin) {
-	
-	# Show Page-ID
-	$GLOBALS['TL_DCA']['tl_page']['list']['label']['fields'][] = 'id';
-	$GLOBALS['TL_DCA']['tl_page']['list']['label']['format'] = '%s <span style="color: #fd9828; padding-left: 3px;">(ID: %s)</span>';
-	
+
+use Contao\CoreBundle\Security\ContaoCorePermissions;
+use Contao\System;
+use Symfony\Component\Security\Core\Security;
+
+if (System::getContainer()->get('contao.security.token_checker')->hasBackendUser()) {
+    $security = System::getContainer()->get('security.helper');
+    if ($security->isGranted('ROLE_ADMIN')) {
+
+        # Only for article-listing
+        if(strpos($_SERVER['REQUEST_URI'],'table=') === false) {
+
+            # Show Page-ID
+            $GLOBALS['TL_DCA']['tl_page']['list']['label']['fields'][] = 'id';
+            $GLOBALS['TL_DCA']['tl_page']['list']['label']['format'] = '%s <span style="color: #fd9828; padding-left: 3px;">(ID: %s)</span>';
+        }
+
+    }
 }
