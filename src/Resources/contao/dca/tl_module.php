@@ -30,8 +30,7 @@ class tl_module_ids extends Backend {
     {
         parent::__construct();
     }
-    
-    
+
     /**
     * List a front end module
     * @param array
@@ -39,7 +38,7 @@ class tl_module_ids extends Backend {
     */
     public function listModule($row)
     {
-        return '<div style="float:left;">'. $row['name'] .' <span style="color:#b7b7b7; padding-left:3px;">['.$GLOBALS['TL_LANG']['FMD'][$row['type']][0] .'] </span><span style="color:#fd9828;">(ID:' .$row['id']. ")</span></div>\n";
+        return '<div style="float:left;">'. $row['name'] .' <span style="color:#b7b7b7; padding-left:3px;">['.($GLOBALS['TL_LANG']['FMD'][$row['type']][0] ?? $row['type']) .'] </span><span style="color:#fd9828;">(ID:' .$row['id']. ")</span></div>\n";
     }
 
 }
