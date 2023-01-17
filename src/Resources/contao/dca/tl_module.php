@@ -31,7 +31,6 @@ class tl_module_ids extends Backend {
         parent::__construct();
     }
 
-
     /**
     * List a front end module
     * @param array
