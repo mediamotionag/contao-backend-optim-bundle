@@ -8,10 +8,10 @@
  * @package   BackendOptimBundle
  * @author    Rory Zünd, Media Motion AG
  */
- 
+
  # Show Module-ID
- $objUser = \BackendUser::getInstance();
-if (BE_USER_LOGGED_IN && $objUser->isAdmin) {
+$objUser = \BackendUser::getInstance();
+if ($objUser && $objUser->isAdmin) {
 	$GLOBALS['TL_DCA']['tl_module']['list']['sorting']['child_record_callback'] = array('tl_module_ids', 'listModule');
 }
 
@@ -22,7 +22,7 @@ if (BE_USER_LOGGED_IN && $objUser->isAdmin) {
  */
 class tl_module_ids extends Backend {
 
-	
+
 	/**
 	* Import the back end user object
 	*/
@@ -30,8 +30,8 @@ class tl_module_ids extends Backend {
 	{
 		parent::__construct();
 	}
-	
-	
+
+
 	/**
 	* List a front end module
 	* @param array
