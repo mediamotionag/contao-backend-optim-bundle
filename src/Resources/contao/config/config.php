@@ -29,6 +29,6 @@ if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendReques
     // Get File mtimestamp
     $strRootDir = System::getContainer()->getParameter('kernel.project_dir');
     $strCSSFileTimestamp = filemtime($strRootDir . '/' . $strCSSFilePath);
-    $GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=' . $strCSSFileTimestamp;
+    $GLOBALS['TL_CSS'][]        = $strCSSFileURL . '?v=' . $strCSSFileTimestamp;
 
 }
