@@ -12,16 +12,23 @@
 /**
  * Allow HTML in Headlines (to add linebreakts)
  */
- 
+
 $GLOBALS['TL_DCA']['tl_content']['fields']['headline']['eval']['allowHtml'] = true;
 $GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml']  = true;
 
-/**
- * Backend CSS for sticky save etc.
- */
+use Contao\System;
+use Symfony\Component\HttpFoundation\Request;
+use Contao\BackendUser;
 
+if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest(System::getContainer()->get('request_stack')->getCurrentRequest() ?? Request::create(''))) {
 
-if(TL_MODE == 'BE')
-{
-	$GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=2';
+    // Define CSS File
+    $strCSSFileURL = 'bundles/memobackendoptim/backend.css';
+    $strCSSFilePath = 'vendor/mediamotionag/contao-backend-optim-bundle/src/Resources/public/backend.css';
+
+    // Get File mtimestamp
+    $strRootDir = System::getContainer()->getParameter('kernel.project_dir');
+    $strCSSFileTimestamp = filemtime($strRootDir . '/' . $strCSSFilePath);
+    $GLOBALS['TL_CSS'][]        = 'bundles/memobackendoptim/backend.css?v=' . $strCSSFileTimestamp;
+
 }
