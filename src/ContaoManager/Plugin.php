@@ -14,6 +14,9 @@ use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Memo\BackendOptimBundle\MemoBackendOptimBundle;
+use Terminal42\NodeBundle\Terminal42NodeBundle;
+use Codefog\HasteBundle\CodefogHasteBundle;
+
 
 class Plugin implements BundlePluginInterface
 {
@@ -23,7 +26,12 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create(MemoBackendOptimBundle::class)->setLoadAfter([ContaoCoreBundle::class])
-        ];
+            BundleConfig::create(MemoBackendOptimBundle::class)
+                ->setLoadAfter([
+                    ContaoCoreBundle::class,
+                    Terminal42NodeBundle::class,
+                    CodefogHasteBundle::class
+                ])
+                ->setReplace(['backend-optim']),];
     }
 }
