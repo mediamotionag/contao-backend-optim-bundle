@@ -12,48 +12,14 @@ declare(strict_types=1);
 
 namespace Memo\BackendOptimBundle\EventListener;
 
-use Codefog\TagsBundle\Manager\ManagerInterface;
-use Contao\CoreBundle\Intl\Locales;
 use Contao\DataContainer;
-use Doctrine\DBAL\Connection;
-use Psr\Log\LoggerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Terminal42\NodeBundle\PermissionChecker;
+use Terminal42\NodeBundle\EventListener\DataContainerListener as NodeDataContainerListener;
 
-class DataContainerListener extends \Terminal42\NodeBundle\EventListener\DataContainerListener
+if (!class_exists('DataContainerListener')) {
+class_alias(DataContainerListener::class, 'NodeDataContainerListener');
+}
+class DataContainerListener extends NodeDataContainerListener
 {
-    const BREADCRUMB_SESSION_KEY = 'tl_node_node';
-
-    /**
-     * @var Connection
-     */
-    private $db;
-
-    /**
-     * @var Locales
-     */
-    private $locales;
-
-    /**
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
-     * @var PermissionChecker
-     */
-    private $permissionChecker;
-
-    /**
-     * @var RequestStack
-     */
-    private $requestStack;
-
-    /**
-     * @var ManagerInterface
-     */
-    private $tagsManager;
-
     /**
      * On label callback.
      */
