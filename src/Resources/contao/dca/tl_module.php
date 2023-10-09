@@ -11,16 +11,11 @@
 
 use Contao\System;
 use Symfony\Component\HttpFoundation\Request;
-use Contao\BackendUser;
 use Contao\Backend;
 
 if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest(System::getContainer()->get('request_stack')->getCurrentRequest() ?? Request::create(''))) {
-    if($objUser = BackendUser::getInstance()){
-        if(isset($objUser->admin) && $objUser->admin == 1){
-            if(strpos($_SERVER['REQUEST_URI'],'table=tl_module') !== false) {
-                $GLOBALS['TL_DCA']['tl_module']['list']['sorting']['child_record_callback'] = array('tl_module_ids', 'listModule');
-            }
-        }
+    if(strpos($_SERVER['REQUEST_URI'],'table=tl_module') !== false) {
+        $GLOBALS['TL_DCA']['tl_module']['list']['sorting']['child_record_callback'] = array('tl_module_ids', 'listModule');
     }
 }
 
