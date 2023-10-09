@@ -4,18 +4,18 @@
  * @author     Rory Zünd (Media Motion AG)
  * @package    BackendOptim
  * @license    LGPL-3.0+
- * @see	       https://github.com/mediamotionag/contao-jwplayer-bundle
+ * @see           https://github.com/mediamotionag/contao-jwplayer-bundle
  */
 
 namespace Memo\BackendOptimBundle\ContaoManager;
 
+use Codefog\HasteBundle\CodefogHasteBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
-use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
+use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Memo\BackendOptimBundle\MemoBackendOptimBundle;
 use Terminal42\NodeBundle\Terminal42NodeBundle;
-use Codefog\HasteBundle\CodefogHasteBundle;
 
 
 class Plugin implements BundlePluginInterface

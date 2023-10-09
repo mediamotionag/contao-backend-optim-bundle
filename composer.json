@@ -1,49 +1,58 @@
 {
-  "name": "mediamotionag/contao-backend-optim-bundle",
-  "homepage": "https://github.com/mediamotionag/contao-backend-optim-bundle",
-  "description":"Backend Optimizing Bundle",
-  "keywords":["contao", "contao4", "contao-bundle", "backend", "id", "ids", "module", "page", "article"],
-  "type": "contao-bundle",
-  "license": "LGPL-3.0+",
-  "authors": [
-    {
-      "name": "Media Motion AG",
-      "homepage": "https://www.mediamotion.ch/",
-      "role": "Developer"
-    }
-  ],
-  "support":{
-    "email":"ticket@memo.support",
-    "issues":"https://github.com/mediamotionag/contao-backend-optim-bundle/issues",
-    "source":"https://github.com/mediamotionag/contao-backend-optim-bundle"
-  },
-  "require": {
-    "php": "^8.1",
-    "contao/core-bundle": "^5.0"
-  },
-  "require-dev": {
-    "roave/security-advisories": "dev-latest"
-  ,
-    "contao/manager-plugin": "^2.0"
-  },
-  "conflict": {
-    "contao/manager-plugin": "<2.0 || >=3.0"
-  },
-  "extra": {
-    "contao-manager-plugin": "Memo\\BackendOptimBundle\\ContaoManager\\Plugin"
-  },
-  "autoload": {
-    "psr-4": {
-      "Memo\\BackendOptimBundle\\": "src/"
-    },
-    "classmap": [
-      "src/Resources/contao/"
+    "name": "mediamotionag/contao-backend-optim-bundle",
+    "homepage": "https://github.com/mediamotionag/contao-backend-optim-bundle",
+    "description": "Backend Optimizing Bundle",
+    "keywords": [
+        "contao",
+        "contao4",
+        "contao-bundle",
+        "backend",
+        "id",
+        "ids",
+        "module",
+        "page",
+        "article"
     ],
-    "exclude-from-classmap": [
-      "src/Resources/contao/config/",
-      "src/Resources/contao/dca/",
-      "src/Resources/contao/languages/",
-      "src/Resources/contao/templates/"
-    ]
-  }
+    "type": "contao-bundle",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Media Motion AG",
+            "homepage": "https://www.mediamotion.ch/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "ticket@memo.support",
+        "issues": "https://github.com/mediamotionag/contao-backend-optim-bundle/issues",
+        "source": "https://github.com/mediamotionag/contao-backend-optim-bundle"
+    },
+    "require": {
+        "php": "^8.1",
+        "contao/core-bundle": "^5.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "contao/manager-plugin": "^2.0"
+    },
+    "conflict": {
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "extra": {
+        "contao-manager-plugin": "Memo\\BackendOptimBundle\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Memo\\BackendOptimBundle\\": "src/"
+        },
+        "classmap": [
+            "src/Resources/contao/"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    }
 }

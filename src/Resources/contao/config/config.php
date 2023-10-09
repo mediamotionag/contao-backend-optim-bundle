@@ -14,11 +14,10 @@
  */
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['headline']['eval']['allowHtml'] = true;
-$GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml']  = true;
+$GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml'] = true;
 
 use Contao\System;
 use Symfony\Component\HttpFoundation\Request;
-use Contao\BackendUser;
 
 if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest(System::getContainer()->get('request_stack')->getCurrentRequest() ?? Request::create(''))) {
 
@@ -29,6 +28,6 @@ if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendReques
     // Get File mtimestamp
     $strRootDir = System::getContainer()->getParameter('kernel.project_dir');
     $strCSSFileTimestamp = filemtime($strRootDir . '/' . $strCSSFilePath);
-    $GLOBALS['TL_CSS'][]        = $strCSSFileURL . '?v=' . $strCSSFileTimestamp;
+    $GLOBALS['TL_CSS'][] = $strCSSFileURL . '?v=' . $strCSSFileTimestamp;
 
 }
