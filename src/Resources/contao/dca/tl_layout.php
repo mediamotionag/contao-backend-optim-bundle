@@ -3,9 +3,9 @@
 use Contao\Backend;
 use Contao\PageModel;
 
-$GLOBALS['TL_DCA']['tl_layout']['list']['sorting']['child_record_callback'] = array('tl_layout_ids', 'listLayout');
+$GLOBALS['TL_DCA']['tl_layout']['list']['sorting']['child_record_callback'] = array('tl_layout_memo', 'listLayout');
 
-class tl_layout_ids extends Backend
+class tl_layout_memo extends Backend
 {
 
     /**
