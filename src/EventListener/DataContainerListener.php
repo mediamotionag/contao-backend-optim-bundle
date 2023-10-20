@@ -16,8 +16,9 @@ use Contao\DataContainer;
 use Terminal42\NodeBundle\EventListener\DataContainerListener as NodeDataContainerListener;
 
 if (!class_exists('DataContainerListener')) {
-class_alias(DataContainerListener::class, 'NodeDataContainerListener');
+    class_alias(DataContainerListener::class, 'NodeDataContainerListener');
 }
+
 class DataContainerListener extends NodeDataContainerListener
 {
     /**
