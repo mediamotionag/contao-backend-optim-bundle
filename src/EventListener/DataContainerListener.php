@@ -13,10 +13,11 @@ declare(strict_types=1);
 namespace Memo\BackendOptimBundle\EventListener;
 
 use Contao\DataContainer;
-use Terminal42\NodeBundle\EventListener\DataContainerListener as NodeDataContainerListener;
 
-if (!class_exists('DataContainerListener')) {
-    class_alias(DataContainerListener::class, 'NodeDataContainerListener');
+if (class_exists('\Terminal42\NodeBundle\EventListener\DataContainerListener')) {
+    class NodeDataContainerListener extends \Terminal42\NodeBundle\EventListener\DataContainerListener { }
+} else {
+    class NodeDataContainerListener { }
 }
 
 class DataContainerListener extends NodeDataContainerListener
