@@ -9,8 +9,6 @@
  * @author    Rory Zünd, Media Motion AG
  */
 
-use Contao\System;
-use Symfony\Component\HttpFoundation\Request;
 use Terminal42\NodeBundle\Terminal42NodeBundle;
 
 if (class_exists(Terminal42NodeBundle::class)) {
