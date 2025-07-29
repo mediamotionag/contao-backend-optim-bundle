@@ -19,6 +19,8 @@ if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendReques
     }
 }
 
+$GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml'] = true;
+
 /**
  * Class tl_module_ids
  * Definition der Callback-Funktionen

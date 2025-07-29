@@ -9,12 +9,6 @@
  * @author    Rory Zünd, Media Motion AG
  */
 
-/**
- * Allow HTML in Headlines (to add linebreakts)
- */
-
-$GLOBALS['TL_DCA']['tl_content']['fields']['headline']['eval']['allowHtml'] = true;
-$GLOBALS['TL_DCA']['tl_module']['fields']['headline']['eval']['allowHtml'] = true;
 
 use Contao\System;
 use Symfony\Component\HttpFoundation\Request;
