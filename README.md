@@ -3,8 +3,10 @@
 ## About
 Use Backend-Optimization for better usage of the Contao-Backend for Administrators.
 
-This Bundle adds the IDs of Modules, Articles, Pages and Nodes (Terminal42 Contao Node) to the Backend.
-It also adds a Backend-CSS to make the save and close buttons sticky.
+This Bundle adds following optimizations:
+- IDs in Backend List-View of Modules, Articles, Pages and Nodes (Terminal42 Contao Node)
+- Usage Count of Layouts (Layout wurde wird x mal verwendet)
+- In tl_content and tl_module allowHtml is set on the headline field
 
 ## Installation
 Install [composer](https://getcomposer.org) if you haven't already, then enter this command in the main directory of your Contao installation:

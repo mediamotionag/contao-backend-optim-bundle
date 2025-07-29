@@ -4,20 +4,3 @@
  *
  * @author Media Motion AG
  **/
-
-/* Make Submit-Form Sticky */
-.tl_formbody_submit {
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: 0px;
-    z-index: 9;
-}
-
-/* Add Icons for known bundles */
-#tl_navigation a.group-leads {
-    background: url(/bundles/memobackendoptim/icons/inbox.svg) 3px 2px no-repeat;
-}
-
-#tl_navigation a.group-notification_center {
-    background: url(/bundles/memobackendoptim/icons/bell.svg) 3px 2px no-repeat;
-}
