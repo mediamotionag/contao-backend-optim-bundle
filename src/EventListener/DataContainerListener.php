@@ -25,7 +25,7 @@ class DataContainerListener extends NodeDataContainerListener
     /**
      * On label callback.
      */
-    public function onCustomLabelCallback(array $row, string $label, DataContainer $dc = null, string $imageAttribute = '', bool $returnImage = false): string
+    public function onCustomLabelCallback(array $row, string $label, ?DataContainer $dc = null, string $imageAttribute = '', bool $returnImage = false): string
     {
         $strOriginalLabel = parent::onLabelCallback($row, $label, $dc, $imageAttribute, $returnImage);
 
