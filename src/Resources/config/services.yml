@@ -9,3 +9,7 @@ services:
       - "@?terminal42_node.permission_checker"
       - "@request_stack"
       - "@?codefog_tags.manager.terminal42_node"
+
+  memo.backendoptim.listener.layout_label:
+    class:  Memo\BackendOptimBundle\EventListener\LayoutLabelListener
+    public: true

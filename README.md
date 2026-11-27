@@ -13,6 +13,8 @@ Install [composer](https://getcomposer.org) if you haven't already, then enter t
 ```sh
 composer require mediamotionag/contao-backend-optim-bundle
 ```
+
+Requires Contao 5.7 or 6.0 and PHP 8.3. For Contao 5.6 and older use the 4.x line (branch `release/4`).
 ## Usage
 1. Install and clear Cache
 2. Enjoy

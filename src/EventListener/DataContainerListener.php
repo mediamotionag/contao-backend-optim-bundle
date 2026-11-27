@@ -12,7 +12,9 @@ declare(strict_types=1);
 
 namespace Memo\BackendOptimBundle\EventListener;
 
+use Contao\CoreBundle\DataContainer\RecordLabel;
 use Contao\DataContainer;
+use Contao\StringUtil;
 
 if (class_exists('\Terminal42\NodeBundle\EventListener\DataContainerListener')) {
     class NodeDataContainerListener extends \Terminal42\NodeBundle\EventListener\DataContainerListener { }
@@ -23,13 +25,18 @@ if (class_exists('\Terminal42\NodeBundle\EventListener\DataContainerListener')) 
 class DataContainerListener extends NodeDataContainerListener
 {
     /**
-     * On label callback.
+     * The node bundle returns an HTML string (Contao 5) or a RecordLabel (Contao 6); the ID is appended to either.
      */
-    public function onCustomLabelCallback(array $row, string $label, ?DataContainer $dc = null, string $imageAttribute = '', bool $returnImage = false): string
+    public function onCustomLabelCallback(array $row, string $label, ?DataContainer $dc = null, string $imageAttribute = '', bool $returnImage = false): string|object
     {
-        $strOriginalLabel = parent::onLabelCallback($row, $label, $dc, $imageAttribute, $returnImage);
+        $original = parent::onLabelCallback($row, $label, $dc, $imageAttribute, $returnImage);
+        $suffix = ' <span style="color:#fd9828;">(ID: ' . (int) $row['id'] . ')</span>';
 
-        // Add the id to the label
-        return $strOriginalLabel . ' <span style="color:#fd9828;">(ID: ' . $row['id'] . ')</span>';
+        if ($original instanceof RecordLabel) {
+            return RecordLabel::fromHtml(($original->htmlLabel ?? StringUtil::specialchars($original->label)) . $suffix);
+        }
+
+        // Contao 6 escapes a plain string label; RecordLabel does not exist on 5.7.
+        return class_exists(RecordLabel::class) ? RecordLabel::fromHtml($original . $suffix) : $original . $suffix;
     }
 }
